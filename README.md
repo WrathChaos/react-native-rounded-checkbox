@@ -10,7 +10,7 @@
 
 <p align="center">
   <img alt="React Native Rounded Checkbox"
-        src="assets/Screenshots/RN-Rounded-Checkbox.png" width="49%" />
+        src="assets/Screenshots/RN-Rounded-Checkbox.png" />
   <img alt="React Native Rounded Checkbox"
         src="assets/Screenshots/RN-Rounded-Checkbox.gif" />
 </p>
