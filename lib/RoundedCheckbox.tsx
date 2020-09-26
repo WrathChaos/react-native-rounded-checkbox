@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Text, View } from "react-native";
 import RNBounceable from "@freakycoder/react-native-bounceable";
 /**
@@ -22,7 +22,6 @@ export interface IRoundedCheckboxProps {
   checkedTextColor?: string;
   component?: React.ReactNode;
   uncheckedTextColor?: string;
-  outerBorderDisable?: boolean;
   onPress: (checked: boolean) => void;
 }
 
@@ -58,7 +57,7 @@ export default class RoundedCheckbox extends React.PureComponent<
       innerSize = 40,
       checkedColor = "#0bc8a5",
       outerBorderColor = "#eee",
-      uncheckedColor = "#F0F0F0",
+      uncheckedColor = "#f0f0f0",
       checkedTextColor = "#fdfdfd",
       uncheckedTextColor = "#5c5969",
     } = this.props;
