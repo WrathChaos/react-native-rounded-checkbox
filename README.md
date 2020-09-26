@@ -1,8 +1,6 @@
 <img alt="React Native Rounded Checkbox" src="assets/logo.png" width="1050"/>
 
-[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-native-rounded-checkbox)
-
-[![React Native Rounded Checkbox](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-rounded-checkbox)
+[![Rounded Checkbox with animated and fully customizable options library for React Native](https://img.shields.io/badge/-Rounded%20Checkbox%20with%20animated%20and%20fully%20customizable%20options%20library%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-rounded-checkbox)
 
 [![npm version](https://img.shields.io/npm/v/react-native-rounded-checkbox.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-rounded-checkbox)
 [![npm](https://img.shields.io/npm/dt/react-native-rounded-checkbox.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-rounded-checkbox)
