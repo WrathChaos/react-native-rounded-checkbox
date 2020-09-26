@@ -10,7 +10,7 @@ import {
   _outerContainer,
 } from "./RoundedCheckbox.style";
 
-interface IRoundedCheckboxProps {
+export interface IRoundedCheckboxProps {
   text?: string;
   outerSize?: number;
   innerSize?: number;
@@ -24,44 +24,54 @@ interface IRoundedCheckboxProps {
   onPress: (checked: boolean) => void;
 }
 
-const RoundedCheckbox = (props: IRoundedCheckboxProps) => {
-  const {
-    component,
-    text = "L",
-    outerSize = 50,
-    innerSize = 40,
-    isChecked = false,
-    checkedColor = "#0bc8a5",
-    outerBorderColor = "#eee",
-    uncheckedColor = "#F0F0F0",
-    checkedTextColor = "#fdfdfd",
-    uncheckedTextColor = "#5c5969",
-    onPress,
-  } = props;
+interface IState {
+  checked: boolean;
+}
 
-  const [checked, setChecked] = React.useState(isChecked);
-  const backgroundColor = checked ? checkedColor : uncheckedColor;
-  const textColor = checked ? checkedTextColor : uncheckedTextColor;
+export default class RoundedCheckbox extends React.PureComponent<
+  IRoundedCheckboxProps,
+  IState
+> {
+  constructor(props: IRoundedCheckboxProps) {
+    super(props);
+    this.state = {
+      checked: props.isChecked || false,
+    };
+  }
 
-  const handleOnPress = () => {
-    setChecked(!checked);
+  handleOnPress = () => {
+    this.setState(
+      { checked: !this.state.checked },
+      () => this.props.onPress && this.props.onPress(this.state.checked),
+    );
   };
 
-  React.useEffect(() => {
-    onPress && onPress(checked);
-  }, [checked]); // ? Only re-run the effect if `checked` variable changes
+  render() {
+    const { checked } = this.state;
+    const {
+      component,
+      text = "L",
+      outerSize = 50,
+      innerSize = 40,
+      checkedColor = "#0bc8a5",
+      outerBorderColor = "#eee",
+      uncheckedColor = "#F0F0F0",
+      checkedTextColor = "#fdfdfd",
+      uncheckedTextColor = "#5c5969",
+    } = this.props;
 
-  return (
-    <RNBounceable
-      {...props}
-      style={_outerContainer(outerSize, outerBorderColor)}
-      onPress={handleOnPress}
-    >
-      <View style={_innerContainer(innerSize, backgroundColor)}>
-        {component || <Text style={_textStyle(textColor)}>{text}</Text>}
-      </View>
-    </RNBounceable>
-  );
-};
-
-export default RoundedCheckbox;
+    const backgroundColor = checked ? checkedColor : uncheckedColor;
+    const textColor = checked ? checkedTextColor : uncheckedTextColor;
+    return (
+      <RNBounceable
+        {...this.props}
+        style={_outerContainer(outerSize, outerBorderColor)}
+        onPress={this.handleOnPress}
+      >
+        <View style={_innerContainer(innerSize, backgroundColor)}>
+          {component || <Text style={_textStyle(textColor)}>{text}</Text>}
+        </View>
+      </RNBounceable>
+    );
+  }
+}
