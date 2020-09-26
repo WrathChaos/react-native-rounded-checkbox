@@ -47,8 +47,6 @@ import RoundedCheckbox from "react-native-rounded-checkbox";
 
 # Configuration - Props
 
-textStyle?: any;
-
 | Property           |   Type    |  Default  | Description                                                                                             |
 | ------------------ | :-------: | :-------: | ------------------------------------------------------------------------------------------------------- |
 | onPress            | function  | undefined | set your own onPress functionality                                                                      |
