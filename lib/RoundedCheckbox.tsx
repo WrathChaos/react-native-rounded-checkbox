@@ -19,6 +19,8 @@ export interface IRoundedCheckboxProps {
   isChecked?: boolean;
   checkedColor?: string;
   uncheckedColor?: string;
+  innerBorderRadius?: number;
+  outerBorderRadius?: number;
   outerBorderColor?: string;
   checkedTextColor?: string;
   component?: React.ReactNode;
@@ -59,6 +61,8 @@ export default class RoundedCheckbox extends React.PureComponent<
       text = "L",
       outerSize = 50,
       innerSize = 40,
+      outerBorderRadius = 50 / 2,
+      innerBorderRadius = 50 / 2,
       checkedColor = "#0bc8a5",
       outerBorderColor = "#eee",
       uncheckedColor = "#f0f0f0",
@@ -73,10 +77,17 @@ export default class RoundedCheckbox extends React.PureComponent<
     return (
       <RNBounceable
         {...this.props}
-        style={_outerContainer(outerSize, outerBorderColor, _outerBorderWidth)}
+        style={_outerContainer(
+          outerSize,
+          outerBorderRadius,
+          outerBorderColor,
+          _outerBorderWidth,
+        )}
         onPress={this.handleOnPress}
       >
-        <View style={_innerContainer(innerSize, backgroundColor)}>
+        <View
+          style={_innerContainer(innerSize, innerBorderRadius, backgroundColor)}
+        >
           {component || (
             <Text style={[_textStyle(textColor), textStyle]}>{text}</Text>
           )}

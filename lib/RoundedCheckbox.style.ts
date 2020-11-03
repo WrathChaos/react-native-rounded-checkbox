@@ -2,6 +2,7 @@ import { ViewStyle, TextStyle } from "react-native";
 
 export const _outerContainer = (
   outerSize: number,
+  outerBorderRadius: number,
   outerBorderColor: string,
   _outerBorderWidth: number,
 ): ViewStyle => ({
@@ -11,17 +12,18 @@ export const _outerContainer = (
   borderWidth: _outerBorderWidth,
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: outerSize / 2,
+  borderRadius: outerBorderRadius,
 });
 
 export const _innerContainer = (
   innerSize: number,
+  innerBorderRadius: number,
   backgroundColor: string,
 ): ViewStyle => ({
   width: innerSize,
   height: innerSize,
   backgroundColor,
-  borderRadius: innerSize / 2,
+  borderRadius: innerBorderRadius,
   alignItems: "center",
   justifyContent: "center",
 });
