@@ -42,10 +42,13 @@ export default class RoundedCheckbox extends React.PureComponent<
   }
 
   handleOnPress = () => {
-    this.setState(
-      { checked: !this.state.checked },
-      () => this.props.onPress && this.props.onPress(this.state.checked),
-    );
+    if (this.props.active === true || this.props.active === false)
+      this.props.onPress && this.props.onPress(this.props.active);
+    else
+      this.setState(
+        { checked: !this.state.checked },
+        () => this.props.onPress && this.props.onPress(this.state.checked),
+      );
   };
 
   render() {
