@@ -12,6 +12,7 @@ import {
 
 export interface IRoundedCheckboxProps {
   text?: string;
+  active?: boolean;
   textStyle?: any;
   outerSize?: number;
   innerSize?: number;
@@ -48,7 +49,7 @@ export default class RoundedCheckbox extends React.PureComponent<
   };
 
   render() {
-    const { checked } = this.state;
+    const _checked = this.props.active ? this.props.active : this.state.checked;
     const {
       component,
       textStyle,
@@ -62,9 +63,9 @@ export default class RoundedCheckbox extends React.PureComponent<
       uncheckedTextColor = "#5c5969",
     } = this.props;
 
-    const backgroundColor = checked ? checkedColor : uncheckedColor;
-    const textColor = checked ? checkedTextColor : uncheckedTextColor;
-    const _outerBorderWidth = checked ? 1 : 0;
+    const backgroundColor = _checked ? checkedColor : uncheckedColor;
+    const textColor = _checked ? checkedTextColor : uncheckedTextColor;
+    const _outerBorderWidth = _checked ? 1 : 0;
 
     return (
       <RNBounceable

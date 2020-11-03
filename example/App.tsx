@@ -1,7 +1,8 @@
 import React from "react";
 import { View, StatusBar, SafeAreaView, Text } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
-import RoundedCheckbox from "react-native-rounded-checkbox";
+// import RoundedCheckbox from "react-native-rounded-checkbox";
+import RoundedCheckbox from "./build/dist/RoundedCheckbox";
 
 const App = () => {
   const [checked, setChecked] = React.useState(false);
@@ -54,7 +55,7 @@ const App = () => {
         <RoundedCheckbox text="S" onPress={() => {}} />
         <RoundedCheckbox text="M" isChecked onPress={() => {}} />
         <RoundedCheckbox text="L" isChecked onPress={() => {}} />
-        <RoundedCheckbox text="XL" onPress={() => {}} />
+        <RoundedCheckbox active={false} text="XL" onPress={() => {}} />
         <RoundedCheckbox text="XXL" onPress={() => {}} />
       </View>
     </View>
