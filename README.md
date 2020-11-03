@@ -60,6 +60,8 @@ import RoundedCheckbox from "react-native-rounded-checkbox";
 | outerBorderColor   |   color   |  #eeeeee  | change the outer border color                                                                           |
 | outerSize          |  number   |    50     | change the whole outer size                                                                             |
 | innerSize          |  number   |    40     | change the whole inner size                                                                             |
+| outerBorderRadius  |  number   |   50/2    | change the whole outer border radius                                                                    |
+| innerBorderRadius  |  number   |   40/2    | change the whole inner border radius                                                                    |
 | textStyle          |   style   |  default  | set your own text style instead of default one                                                          |
 | active             |  boolean  | undefined | disables the built-in check system and it let's to control check system                                 |
 
