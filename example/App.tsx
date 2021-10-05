@@ -2,7 +2,7 @@ import React from "react";
 import { View, StatusBar, SafeAreaView, Text } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 // import RoundedCheckbox from "react-native-rounded-checkbox";
-import RoundedCheckbox from "./lib/RoundedCheckbox";
+import RoundedCheckbox from "./build/dist/RoundedCheckbox";
 
 const App = () => {
   const [checked, setChecked] = React.useState(false);

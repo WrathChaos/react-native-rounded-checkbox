@@ -50,20 +50,17 @@ import RoundedCheckbox from "react-native-rounded-checkbox";
 | Property           |   Type    |  Default  | Description                                                                                             |
 | ------------------ | :-------: | :-------: | ------------------------------------------------------------------------------------------------------- |
 | onPress            | function  | undefined | set your own onPress functionality                                                                      |
+| active             |  boolean  | undefined | disables the built-in check system and it let's to control check system                                 |
+| children           | component |   Text    | change the default Text component with any component like `Icon` from react-native-dynamic-vector-icons |
 | text               |  string   |    "L"    | change the default text value                                                                           |
-| component          | component |   Text    | change the default Text component with any component like `Icon` from react-native-dynamic-vector-icons |
 | isChecked          |  boolean  |   false   | set the initial checked state                                                                           |
 | checkedColor       |   color   |  #0bc8a5  | change the background color when checked state is true                                                  |
 | uncheckedColor     |   color   |  #f0f0f0  | change the background color when checked state is false                                                 |
 | checkedTextColor   |   color   |  #fdfdfd  | change the text color when checked state is true                                                        |
 | uncheckedTextColor |   color   |  #5c5969  | change the text color when checked state is false                                                       |
-| outerBorderColor   |   color   |  #eeeeee  | change the outer border color                                                                           |
-| outerSize          |  number   |    50     | change the whole outer size                                                                             |
-| innerSize          |  number   |    40     | change the whole inner size                                                                             |
-| outerBorderRadius  |  number   |   50/2    | change the whole outer border radius                                                                    |
-| innerBorderRadius  |  number   |   40/2    | change the whole inner border radius                                                                    |
-| textStyle          |   style   |  default  | set your own text style instead of default one                                                          |
-| active             |  boolean  | undefined | disables the built-in check system and it let's to control check system                                 |
+| textStyle          |   style   |  default  | set your own `text` style instead of default one                                                        |
+| outerStyle         |   style   |  default  | set your own `outer` style instead of default one                                                       |
+| innerStyle         |   style   |  default  | set your own `inner` style instead of default one                                                       |
 
 ## Future Plans
 

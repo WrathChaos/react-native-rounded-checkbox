@@ -1,6 +1,6 @@
 {
   "name": "react-native-rounded-checkbox",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Rounded Checkbox with animated and fully customizable options library for React Native",
   "main": "./build/dist/RoundedCheckbox.js",
   "repository": "git@github.com:WrathChaos/react-native-rounded-checkbox.git",

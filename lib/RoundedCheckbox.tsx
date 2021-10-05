@@ -38,10 +38,10 @@ export interface IRoundedCheckboxProps {
 
 const RoundedCheckbox: React.FC<IRoundedCheckboxProps> = ({
   active,
-  textStyle,
   isChecked,
   children,
   text = "L",
+  textStyle,
   outerStyle,
   innerStyle,
   checkedColor = "#0bc8a5",
