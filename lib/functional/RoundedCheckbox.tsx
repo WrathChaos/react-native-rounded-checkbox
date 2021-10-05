@@ -16,7 +16,7 @@ import styles, {
   _innerBorderWidthStyle,
   _outerBorderWithStyle,
 } from "./RoundedCheckbox.style";
-import useStateWithCallback from "./helpers/useStateWithCallback";
+import useStateWithCallback from "../helpers/useStateWithCallback";
 
 type CustomViewStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
 type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
