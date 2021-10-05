@@ -2,7 +2,7 @@ import React from "react";
 import { View, StatusBar, SafeAreaView, Text } from "react-native";
 import Icon from "react-native-dynamic-vector-icons";
 // import RoundedCheckbox from "react-native-rounded-checkbox";
-import RoundedCheckbox from "./build/dist/RoundedCheckbox";
+import RoundedCheckbox from "./lib/RoundedCheckbox";
 
 const App = () => {
   const [checked, setChecked] = React.useState(false);
@@ -17,7 +17,7 @@ const App = () => {
     uncheckedColor: string,
     isChecked: boolean,
     checkedValue: boolean,
-    onPress: Function,
+    onPress: (checked: boolean) => void,
   ) => (
     <View style={{ marginLeft: 10 }}>
       <RoundedCheckbox
@@ -25,16 +25,15 @@ const App = () => {
         isChecked={isChecked}
         checkedColor={checkedColor}
         uncheckedColor={uncheckedColor}
-        component={
-          <Icon
-            size={16}
-            name="check"
-            type="Entypo"
-            color={checkedValue ? "#fdfdfd" : "transparent"}
-          />
-        }
         onPress={onPress}
-      />
+      >
+        <Icon
+          size={16}
+          name="check"
+          type="Entypo"
+          color={checkedValue ? "#fdfdfd" : "transparent"}
+        />
+      </RoundedCheckbox>
     </View>
   );
 
@@ -52,9 +51,20 @@ const App = () => {
           justifyContent: "space-evenly",
         }}
       >
-        <RoundedCheckbox text="S" onPress={() => {}} />
+        <RoundedCheckbox
+          text="S"
+          onPress={(checked: boolean) => {
+            alert(checked);
+          }}
+        />
         <RoundedCheckbox text="M" isChecked onPress={() => {}} />
-        <RoundedCheckbox text="L" isChecked onPress={() => {}} />
+        <RoundedCheckbox
+          text="L"
+          isChecked
+          onPress={(checked: boolean) => {
+            alert(checked);
+          }}
+        />
         <RoundedCheckbox active={false} text="XL" onPress={() => {}} />
         <RoundedCheckbox text="XXL" onPress={() => {}} />
       </View>

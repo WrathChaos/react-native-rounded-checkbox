@@ -1,35 +1,41 @@
-import { ViewStyle, TextStyle } from "react-native";
+import { ViewStyle, TextStyle, StyleSheet } from "react-native";
 
-export const _outerContainer = (
-  outerSize: number,
-  outerBorderRadius: number,
-  outerBorderColor: string,
-  _outerBorderWidth: number,
-): ViewStyle => ({
-  width: outerSize,
-  height: outerSize,
-  borderColor: outerBorderColor,
-  borderWidth: _outerBorderWidth,
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: outerBorderRadius,
+export const _outerBorderWithStyle = (borderWidth: number): ViewStyle => ({
+  borderWidth: borderWidth,
 });
 
-export const _innerContainer = (
-  innerSize: number,
-  innerBorderRadius: number,
-  backgroundColor: string,
-): ViewStyle => ({
-  width: innerSize,
-  height: innerSize,
-  backgroundColor,
-  borderRadius: innerBorderRadius,
-  alignItems: "center",
-  justifyContent: "center",
+export const _innerBorderWidthStyle = (backgroundColor: string): ViewStyle => ({
+  backgroundColor: backgroundColor,
 });
 
-export const _textStyle = (textColor: string): TextStyle => ({
-  fontSize: 12,
-  color: textColor,
-  fontWeight: "bold",
+export const _textColorStyle = (color: string): TextStyle => ({
+  color: color,
+});
+
+interface Style {
+  outerContainer: ViewStyle;
+  innerContainer: ViewStyle;
+  textStyle: TextStyle;
+}
+
+export default StyleSheet.create<Style>({
+  outerContainer: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderColor: "#eee",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  innerContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 40 / 2,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  textStyle: {
+    fontSize: 12,
+    fontWeight: "bold",
+  },
 });
