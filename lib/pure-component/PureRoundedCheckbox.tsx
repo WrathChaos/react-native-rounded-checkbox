@@ -58,9 +58,6 @@ export default class PureRoundedCheckbox extends React.PureComponent<
         { checked: !this.state.checked },
         () => this.props.onPress && this.props.onPress(this.state.checked),
       );
-    this.setState({ checked: !this.state.checked }, () => {
-      this.props.onPress && this.props.onPress(this.state.checked);
-    });
   };
 
   render() {
