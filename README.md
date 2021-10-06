@@ -36,13 +36,22 @@ npm i react-native-rounded-checkbox
 ## Import
 
 ```jsx
-import RoundedCheckbox from "react-native-rounded-checkbox";
+import {
+  RoundedCheckbox,
+  PureRoundedCheckbox,
+} from "react-native-rounded-checkbox";
 ```
 
 ## Fundamental Usage
 
 ```jsx
 <RoundedCheckbox onPress={(checked) => console.log("Checked: ", checked)} />
+```
+
+## PureComponent Usage
+
+```jsx
+<PureRoundedCheckbox onPress={(checked) => console.log("Checked: ", checked)} />
 ```
 
 # Configuration - Props
