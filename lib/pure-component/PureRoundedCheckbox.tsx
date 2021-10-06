@@ -51,6 +51,13 @@ export default class PureRoundedCheckbox extends React.PureComponent<
   }
 
   handlePress = () => {
+    if (typeof this.props.active === "boolean")
+      this.props.onPress && this.props.onPress(this.props.active);
+    else
+      this.setState(
+        { checked: !this.state.checked },
+        () => this.props.onPress && this.props.onPress(this.state.checked),
+      );
     this.setState({ checked: !this.state.checked }, () => {
       this.props.onPress && this.props.onPress(this.state.checked);
     });
@@ -83,7 +90,7 @@ export default class PureRoundedCheckbox extends React.PureComponent<
         style={[
           styles.outerContainer,
           outerStyle,
-          _outerBorderWithStyle(checked ? 1 : 0),
+          _outerBorderWithStyle(isActive ? 1 : 0),
         ]}
         onPress={this.handlePress}
       >

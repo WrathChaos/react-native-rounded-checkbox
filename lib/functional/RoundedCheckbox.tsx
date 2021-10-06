@@ -58,9 +58,11 @@ const RoundedCheckbox: React.FC<IRoundedCheckboxProps> = ({
   const textColor = isActive ? checkedTextColor : uncheckedTextColor;
 
   const handlePress = () => {
-    setChecked(!checked, (updatedChecked: boolean) => {
-      onPress && onPress(updatedChecked);
-    });
+    if (typeof active === "boolean") onPress && onPress(active);
+    else
+      setChecked(!checked, (updatedChecked: boolean) => {
+        onPress && onPress(updatedChecked);
+      });
   };
 
   const InnerComponent = () => (
@@ -75,7 +77,7 @@ const RoundedCheckbox: React.FC<IRoundedCheckboxProps> = ({
       style={[
         styles.outerContainer,
         outerStyle,
-        _outerBorderWithStyle(checked ? 1 : 0),
+        _outerBorderWithStyle(isActive ? 1 : 0),
       ]}
       onPress={handlePress}
     >
